@@ -1,3 +1,6 @@
+import defaultTheme from "tailwindcss/defaultTheme";
+import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -12,6 +15,9 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -68,5 +74,11 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), variablesForColors],
 };
+
+function variablesForColors({ addBase, theme }) {
+  const colors = flattenColorPalette(theme("colors"));
+  const vars = Object.fromEntries(Object.entries(colors).map(([key, val]) => [`--${key}`, val]));
+  addBase({ ":root": vars });
+}
