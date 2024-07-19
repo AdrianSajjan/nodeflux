@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import { ArrowRightIcon } from "lucide-react";
 import "@/styles/globals.css";
 ---
 
@@ -16,8 +17,14 @@ import "@/styles/globals.css";
             <div class="absolute transition-all duration-150 opacity-0 inset-px bg-[#B73DFC] rounded-xl blur-lg group-hover:opacity-60 group-hover:-inset-px group-hover:duration-300 z-0"></div>
             <button class="h-14 inline-flex items-center px-10 py-2 bg-[#B73DFC] font-medium rounded-full text-background relative z-10">Get in touch</button>
           </div>
-          <button class="inline-flex items-center">
-            <span>View our services</span>
+          <button class="inline-flex items-center gap-2 group">
+            <span class="font-medium">View our services</span>
+            <div class="h-6 w-6 overflow-hidden">
+              <div class="flex transition-transform duration-500 -translate-x-6 group-hover:translate-x-0">
+                <ArrowRightIcon className="h-6 w-6 -rotate-45 shrink-0" />
+                <ArrowRightIcon className="h-6 w-6 -rotate-45 shrink-0" />
+              </div>
+            </div>
           </button>
         </div>
       </div>
