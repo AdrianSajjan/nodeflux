@@ -19,7 +19,7 @@ module.exports = {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {
-        "hero-pattern": "url('./src/assets/images/home/hero-pattern.svg')",
+        "hero-pattern": "url('https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65be03eef82b93761d2a706d_hero%20BG%20image.svg')",
       },
       colors: {
         border: "hsl(var(--border))",
