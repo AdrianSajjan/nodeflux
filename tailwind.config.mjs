@@ -18,6 +18,9 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
+      backgroundImage: {
+        "hero-pattern": "url('./src/assets/images/home/hero-pattern.svg')",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -67,10 +70,16 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
     },
   },
