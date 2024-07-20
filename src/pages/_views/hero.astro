@@ -1,0 +1,53 @@
+---
+import { ArrowRightIcon } from "lucide-react";
+import { MaskedHeading } from "@/components/typography/masked-heading";
+import google from "@/assets/images/home/google-icon.png";
+---
+
+<section id="hero" class="flex flex-col gap-16">
+  <div class="container">
+    <div class="flex flex-col items-center">
+      <MaskedHeading className="animate-slide-in opacity-0 max-w-4xl text-[5.5rem] leading-[1.1]">Elevating businesses to the next level.</MaskedHeading>
+      <p class="animate-slide-in [--slide-in-delay:150ms] opacity-0 text-foreground/80 max-w-xl text-center text-lg font-normal mt-6 mb-10">
+        Bringing win-win strategies to the table for proactive domination and a new normal in digital excellence.
+      </p>
+      <div class="flex items-center gap-8 animate-slide-in [--slide-in-delay:250ms] opacity-0">
+        <div class="relative group">
+          <div class="absolute transition-all duration-150 opacity-0 inset-px bg-[#B73DFC] rounded-xl blur-lg group-hover:opacity-60 group-hover:-inset-px group-hover:duration-300 z-0"></div>
+          <button class="h-14 inline-flex items-center px-10 py-2 bg-[#B73DFC] font-medium rounded-full text-background relative z-10">Get in touch</button>
+        </div>
+        <button class="inline-flex items-center gap-2 group">
+          <span class="font-medium">View our services</span>
+          <div class="h-6 w-6 overflow-hidden">
+            <div class="flex transition-transform duration-500 -translate-x-6 group-hover:translate-x-0">
+              <ArrowRightIcon className="h-6 w-6 -rotate-45 shrink-0" />
+              <ArrowRightIcon className="h-6 w-6 -rotate-45 shrink-0" />
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="relative overflow-hidden container max-w-screen-2xl">
+    <div class="animate-slide-in [--slide-in-delay:350ms] opacity-0 shadow-[inset_0_0_2px_40px_#141414] bg-hero-pattern min-h-[37.5rem] w-full rounded-full bg-center bg-no-repeat bg-auto mt-16 flex items-center px-28 justify-between">
+      <div class="flex flex-col items-center gap-4">
+        <img src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65b92bd534c9e4af4d859923_star%20rate%20icon.svg" alt="Stars" />
+        <p class="italic">4.9 out of 5 based on 768 reviews</p>
+        <img src={google.src} alt="Google" class="h-12 w-auto" />
+      </div>
+      <div class="flex flex-col gap-4 max-w-80">
+        <p class="italic">“We send about a million emails every week now. Being in a B2C business, It's really important for”</p>
+        <div class="flex items-center gap-4">
+          <img src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65be08c608bcfecbcca5abd7_hero%20client%20image.png" alt="client" />
+          <div class="text-sm flex flex-col gap-0.5">
+            <strong>Russ Herisson</strong>
+            <span>Founder of Airbnb</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="animate-slide-in [--slide-in-delay:750ms] opacity-0 absolute inset-0 bottom-10 flex justify-center">
+      <img src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65e060e219830a12d4f4a19d_Hero%20Image.webp" alt="Me" class="h-full w-auto" />
+    </div>
+  </div>
+</section>

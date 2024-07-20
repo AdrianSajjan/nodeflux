@@ -63,12 +63,30 @@ module.exports = {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
         },
         "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
+        },
+        "slide-in": {
+          from: {
+            opacity: "0",
+            transform: "translateY(var(--slide-in-amount, 5rem))",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
         },
         scroll: {
           to: {
@@ -79,7 +97,8 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        "slide-in": "slide-in var(--slide-in-duration, 500ms) ease var(--slide-in-delay, 0ms) var(--slide-in-direction, forwards)",
+        scroll: "scroll var(--scroll-duration, 40s) var(--scroll-direction, forwards) linear infinite",
       },
     },
   },

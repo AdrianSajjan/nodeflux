@@ -1,0 +1,26 @@
+---
+import { MarqueeBrands } from "@/pages/_components/marquee-brands";
+---
+
+<section id="client" class="pt-28 group" data-state="invisible">
+  <div class="container flex flex-col gap-10">
+    <p class="group-data-[state=visible]:animate-slide-in opacity-0 text-center text-lg"><strong>Over 25 brands</strong> have experienced remarkable new user growth with NodeFlux</p>
+    <div class="group-data-[state=visible]:animate-slide-in opacity-0 [--slide-in-delay:150ms]">
+      <MarqueeBrands client:load />
+    </div>
+  </div>
+</section>
+
+<script>
+  const element = document.getElementById("client")!;
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        element.dataset.state = "visible";
+        observer.unobserve(element);
+      }
+    },
+    { threshold: 0.5 }
+  );
+  observer.observe(element);
+</script>

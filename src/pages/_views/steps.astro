@@ -1,0 +1,25 @@
+---
+import { MaskedHeading } from "@/components/typography/masked-heading";
+import { StickyScroll } from "@/pages/_components/sticky-scroll";
+---
+
+<section id="steps" class="pt-40 group" data-state="invisible">
+  <div class="container max-w-screen-2xl flex flex-col items-center gap-20">
+    <MaskedHeading className="group-data-[state=visible]:animate-slide-in opacity-0 max-w-3xl leading-[1.125]">Top-notch solutions, delivered at your doorstep</MaskedHeading>
+    <StickyScroll client:load />
+  </div>
+</section>
+
+<script>
+  const element = document.getElementById("steps")!;
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        element.dataset.state = "visible";
+        observer.unobserve(element);
+      }
+    },
+    { threshold: 0.1 }
+  );
+  observer.observe(element);
+</script>
