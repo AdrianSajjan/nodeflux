@@ -1,12 +1,43 @@
 ---
 import { MaskedHeading } from "@/components/typography/masked-heading";
-import { StickyScroll } from "@/pages/_components/sticky-scroll";
+
+const steps = [
+  {
+    image: "https://cdn.prod.website-files.com/65d0e7803a26b378f81fb7e9/65e06cf60cc16e24eaa66c95_blog%20img%203.webp",
+    title: "Tell us your vision",
+    description: "We prioritize understanding your vision and needs to create tailor-made transformative solutions",
+  },
+  {
+    image: "https://cdn.prod.website-files.com/65d0e7803a26b378f81fb7e9/65e06d4fbaf718fdbc20215c_blog%20img%204.webp",
+    title: "Receive the magic",
+    description: "With our commitment to creativity, precision, and dedication to your success, we ensure the delivering exceptional products hoping to exceed expectations",
+  },
+  {
+    image: "https://cdn.prod.website-files.com/65d0e7803a26b378f81fb7e9/65e06dccfaaae3f2af1da3de_blog%20img%205.webp",
+    title: "Access continuous support",
+    description: "To ensure sustained performance and longevity of our solutions, we provide maintenance and support services with regular updates.",
+  },
+];
 ---
 
 <section id="steps" class="pt-40 group" data-state="invisible">
-  <div class="container max-w-screen-2xl flex flex-col items-center gap-20">
+  <div class="container flex flex-col items-center gap-20">
     <MaskedHeading className="group-data-[state=visible]:animate-slide-in opacity-0 max-w-3xl leading-[1.125]">Top-notch solutions, delivered at your doorstep</MaskedHeading>
-    <StickyScroll client:load />
+    <div class="group-data-[state=visible]:animate-slide-in opacity-0 [--slide-in-delay:200ms] grid grid-cols-3 gap-10">
+      {
+        steps.map((step) => (
+          <article class="flex flex-col gap-8">
+            <div class="group/cover overflow-hidden rounded-3xl w-full">
+              <img src={step.image} class="w-full h-auto transition-transform group-hover/cover:scale-110" />
+            </div>
+            <div class="flex flex-col gap-4">
+              <h3 class="text-2xl font-semibold">{step.title}</h3>
+              <p class="text-base text-foreground/75">{step.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
   </div>
 </section>
 
@@ -19,7 +50,7 @@ import { StickyScroll } from "@/pages/_components/sticky-scroll";
         observer.unobserve(element);
       }
     },
-    { threshold: 0.1 }
+    { threshold: 0.5 }
   );
   observer.observe(element);
 </script>

@@ -1,0 +1,27 @@
+---
+import { MaskedHeading } from "@/components/typography/masked-heading";
+import { TestimonialsCarousel } from "@/pages/_components/testimonials-carousel";
+---
+
+<section id="testimonials" class="pt-40 group" data-state="invisible">
+  <div class="container flex flex-col items-center gap-20">
+    <MaskedHeading className="group-data-[state=visible]:animate-slide-in opacity-0 max-w-3xl leading-[1.125]">What my customers think about nodeflux</MaskedHeading>
+    <div class="container relative md:px-12 group-data-[state=visible]:animate-slide-in opacity-0">
+      <TestimonialsCarousel client:load />
+    </div>
+  </div>
+</section>
+
+<script>
+  const element = document.getElementById("testimonials")!;
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        element.dataset.state = "visible";
+        observer.unobserve(element);
+      }
+    },
+    { threshold: 0.5 }
+  );
+  observer.observe(element);
+</script>
