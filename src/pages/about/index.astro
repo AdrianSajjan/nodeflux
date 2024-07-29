@@ -1,0 +1,75 @@
+---
+import { MaskedHeading } from "@/components/typography/masked-heading";
+import Testimonials from "@/pages/_views/testimonials.astro";
+import Banner from "@/pages/_views/banner.astro";
+import Layout from "@/layouts/layout.astro";
+---
+
+<Layout title="About Us">
+  <section id="about" class="">
+    <div class="container grid grid-cols-2 gap-16">
+      <div class="flex flex-col">
+        <MaskedHeading className="text-left">Learn about us</MaskedHeading>
+        <p class="text-lg text-foreground/75 mt-8 leading-relaxed">
+          Discover the story behind NodeFlux. We are dedicated to transforming your vision into reality through innovation, expertise, and a passion for excellence. Our team is committed to delivering exceptional solutions that drive
+          success and foster lasting partnerships. Join us on our journey to create impactful digital experiences.
+        </p>
+        <div class="grid grid-cols-2 mt-10 gap-4">
+          <article class="col-span-1 bg-card py-5 px-6 flex flex-col gap-2.5 rounded-xl border">
+            <h3 class="text-xl font-semibold">Innovation</h3>
+            <p class="text-sm text-foreground/70 leading-relaxed">Continuously pushing boundaries to develop cutting-edge solutions that set new industry standards.</p>
+          </article>
+          <article class="col-span-1 bg-card py-5 px-6 flex flex-col gap-2.5 rounded-xl border">
+            <h3 class="text-xl font-semibold">Integrity and Collaboration</h3>
+            <p class="text-sm text-foreground/70 leading-relaxed">Conducting business with transparency, honesty, and ethical practices while fostering teamwork and open communication to achieve the best results.</p>
+          </article>
+          <article class="col-span-2 bg-card py-5 px-6 flex flex-col gap-2.5 rounded-xl border">
+            <h3 class="text-xl font-semibold">Customer-Centricity</h3>
+            <p class="text-sm text-foreground/70 leading-relaxed">Placing our clients at the heart of everything we do, ensuring their needs and goals drive our processes and outcomes.</p>
+          </article>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  </section>
+  <section class="pt-32">
+    <div class="container flex flex-col gap-24">
+      <div class="h-px w-full bg-gradient-to-r from-background via-gray-400 to-background"></div>
+      <div class="flex items-center justify-center gap-28">
+        <article class="flex flex-col items-center justify-center">
+          <MaskedHeading>18+</MaskedHeading>
+          <p class="text-center text-lg mt-1.5">Clients</p>
+        </article>
+        <div class="h-28 w-px bg-gradient-to-b from-background via-gray-400 to-background shrink-0"></div>
+        <article class="flex flex-col items-center justify-center">
+          <MaskedHeading>900+</MaskedHeading>
+          <p class="text-center text-lg mt-1.5">hours spent on craft</p>
+        </article>
+        <div class="h-28 w-px bg-gradient-to-b from-background via-gray-400 to-background shrink-0"></div>
+        <article class="flex flex-col items-center justify-center">
+          <MaskedHeading>4.6</MaskedHeading>
+          <p class="text-center text-lg mt-1.5">Star review</p>
+        </article>
+      </div>
+      <div class="flex flex-col items-center">
+        <MaskedHeading className="text-3xl leading-snug max-w-3xl">We take pride in offering exceptional digital solutions, having already earned the trust and partnership of a discerning group of clients all over the world.</MaskedHeading>
+        <div class="flex items-center mt-8 gap-20">
+          <div class="flex items-center gap-4">
+            <img src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65e0cf0a42a7088c022f38e2_Review%20Image%204.svg" alt="" class="h-24 w-24" />
+            <div>
+              <p class="text-lg font-semibold">Abhay Bagdawala</p>
+              <p class="text-base text-foreground/50">Founder</p>
+            </div>
+          </div>
+          <div class="h-28 w-px bg-gradient-to-b from-background via-gray-400 to-background shrink-0"></div>
+          <div>
+            <p class="font-[cursive] text-2xl">Abhay Bagdawala</p>
+          </div>
+        </div>
+      </div>
+      <div class="h-px w-full bg-gradient-to-r from-background via-gray-400 to-background"></div>
+    </div>
+  </section>
+  <Testimonials />
+  <Banner />
+</Layout>
