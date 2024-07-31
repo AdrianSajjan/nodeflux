@@ -1,0 +1,18 @@
+---
+import { MaskedHeading } from "@/components/typography/masked-heading";
+import Layout from "@/layouts/layout.astro";
+import Banner from "@/pages/_views/banner.astro";
+import Client from "@/pages/_views/client.astro";
+import Faq from "@/pages/about/_views/faq.astro";
+---
+
+<Layout title="Contact Us">
+  <section id="contact">
+    <div class="container flex flex-col items-center">
+      <MaskedHeading className="text-7xl leading-[1.15] max-w-2xl">Let's start a project together</MaskedHeading>
+    </div>
+  </section>
+  <Client />
+  <Faq />
+  <Banner />
+</Layout>
