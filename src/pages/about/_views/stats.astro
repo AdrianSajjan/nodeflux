@@ -1,0 +1,56 @@
+---
+import { MaskedHeading } from "@/components/typography/masked-heading";
+---
+
+<section id="stats" class="pt-32 group" data-state="invisible">
+  <div class="container flex flex-col gap-24">
+    <div class="h-px w-full bg-gradient-to-r from-background via-gray-400 to-background"></div>
+    <div class="flex items-center justify-center gap-28 group-data-[state=visible]:animate-slide-in opacity-0 [--slide-in-delay:0ms]">
+      <article class="flex flex-col items-center justify-center">
+        <MaskedHeading>18+</MaskedHeading>
+        <p class="text-center text-lg mt-1.5">Clients</p>
+      </article>
+      <div class="h-28 w-px bg-gradient-to-b from-background via-gray-400 to-background shrink-0"></div>
+      <article class="flex flex-col items-center justify-center">
+        <MaskedHeading>900+</MaskedHeading>
+        <p class="text-center text-lg mt-1.5">hours spent on craft</p>
+      </article>
+      <div class="h-28 w-px bg-gradient-to-b from-background via-gray-400 to-background shrink-0"></div>
+      <article class="flex flex-col items-center justify-center">
+        <MaskedHeading>4.6</MaskedHeading>
+        <p class="text-center text-lg mt-1.5">Star review</p>
+      </article>
+    </div>
+    <div class="flex flex-col items-center group-data-[state=visible]:animate-slide-in opacity-0 [--slide-in-delay:150ms]">
+      <MaskedHeading className="text-3xl leading-snug max-w-3xl">We take pride in offering exceptional digital solutions, having already earned the trust and partnership of a discerning group of clients all over the world.</MaskedHeading>
+      <div class="flex items-center mt-8 gap-20">
+        <div class="flex items-center gap-4">
+          <img src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65e0cf0a42a7088c022f38e2_Review%20Image%204.svg" alt="" class="h-24 w-24" />
+          <div>
+            <p class="text-lg font-semibold">Abhay Bagdawala</p>
+            <p class="text-base text-foreground/50">Founder</p>
+          </div>
+        </div>
+        <div class="h-28 w-px bg-gradient-to-b from-background via-gray-400 to-background shrink-0"></div>
+        <div>
+          <p class="font-[cursive] text-2xl">Abhay Bagdawala</p>
+        </div>
+      </div>
+    </div>
+    <div class="h-px w-full bg-gradient-to-r from-background via-gray-400 to-background"></div>
+  </div>
+</section>
+
+<script>
+  const element = document.getElementById("stats")!;
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        element.dataset.state = "visible";
+        observer.unobserve(element);
+      }
+    },
+    { threshold: 0.1 }
+  );
+  observer.observe(element);
+</script>

@@ -1,0 +1,44 @@
+---
+import { MaskedHeading } from "@/components/typography/masked-heading";
+---
+
+<section id="hero" class="group" data-state="invisible">
+  <div class="container grid grid-cols-2 gap-16">
+    <div class="flex flex-col">
+      <MaskedHeading className="text-left group-data-[state=visible]:animate-slide-in opacity-0">Learn about us</MaskedHeading>
+      <p class="text-lg text-foreground/75 mt-8 leading-relaxed group-data-[state=visible]:animate-slide-in opacity-0 [--slide-in-delay:150ms]">
+        Discover the story behind NodeFlux. We are dedicated to transforming your vision into reality through innovation, expertise, and a passion for excellence. Our team is committed to delivering exceptional solutions that drive success
+        and foster lasting partnerships. Join us on our journey to create impactful digital experiences.
+      </p>
+      <div class="grid grid-cols-2 mt-10 gap-4 group-data-[state=visible]:animate-slide-in opacity-0 [--slide-in-delay:250ms]">
+        <article class="col-span-1 bg-card py-5 px-6 flex flex-col gap-2.5 rounded-xl border">
+          <h3 class="text-xl font-semibold">Innovation</h3>
+          <p class="text-sm text-foreground/70 leading-relaxed">Continuously pushing boundaries to develop cutting-edge solutions that set new industry standards.</p>
+        </article>
+        <article class="col-span-1 bg-card py-5 px-6 flex flex-col gap-2.5 rounded-xl border">
+          <h3 class="text-xl font-semibold">Integrity and Collaboration</h3>
+          <p class="text-sm text-foreground/70 leading-relaxed">Conducting business with transparency, honesty, and ethical practices while fostering teamwork and open communication to achieve the best results.</p>
+        </article>
+        <article class="col-span-2 bg-card py-5 px-6 flex flex-col gap-2.5 rounded-xl border">
+          <h3 class="text-xl font-semibold">Customer-Centricity</h3>
+          <p class="text-sm text-foreground/70 leading-relaxed">Placing our clients at the heart of everything we do, ensuring their needs and goals drive our processes and outcomes.</p>
+        </article>
+      </div>
+    </div>
+    <div></div>
+  </div>
+</section>
+
+<script>
+  const element = document.getElementById("hero")!;
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        element.dataset.state = "visible";
+        observer.unobserve(element);
+      }
+    },
+    { threshold: 0.1 }
+  );
+  observer.observe(element);
+</script>
