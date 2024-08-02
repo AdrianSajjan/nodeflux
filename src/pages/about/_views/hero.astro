@@ -3,7 +3,7 @@ import { MaskedHeading } from "@/components/typography/masked-heading";
 ---
 
 <section id="hero" class="group" data-state="invisible">
-  <div class="container grid grid-cols-2 gap-16">
+  <div class="container grid grid-cols-2 gap-24">
     <div class="flex flex-col">
       <MaskedHeading className="text-left group-data-[state=visible]:animate-slide-in opacity-0">Learn about us</MaskedHeading>
       <p class="text-lg text-foreground/75 mt-8 leading-relaxed group-data-[state=visible]:animate-slide-in opacity-0 [--slide-in-delay:150ms]">
@@ -25,7 +25,9 @@ import { MaskedHeading } from "@/components/typography/masked-heading";
         </article>
       </div>
     </div>
-    <div></div>
+    <div class="group-data-[state=visible]:animate-slide-in opacity-0 [--slide-in-delay:150ms]">
+      <img src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65e06af667ae17a2b0df19d3_About%20Hero%20middle%20Icon-p-800.webp" class="h-full w-full rounded-3xl" />
+    </div>
   </div>
 </section>
 
