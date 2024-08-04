@@ -1,0 +1,35 @@
+---
+import { MaskedHeading } from "@/components/typography/masked-heading";
+import laptop from "@/assets/images/frames/laptop.png";
+import mobile from "@/assets/images/frames/mobile.png";
+---
+
+<section id="projects" class="mt-40">
+  <div class="container">
+    <div class="flex flex-col gap-3.5 max-w-2xl mx-auto">
+      <MaskedHeading className="leading-[1.15]">Our Delivered Products</MaskedHeading>
+      <p class="text-xl text-foreground/75 text-center">Here are some of the products we have created for our clients, for more examples please contact us</p>
+    </div>
+    <div class="flex mt-20 gap-40">
+      <div class="flex flex-1 justify-center items-center">
+        <div class="relative w-full">
+          <img src={laptop.src} />
+          <img src={mobile.src} class="absolute right-0 -bottom-12 w-3/12 h-auto" />
+        </div>
+      </div>
+      <div class="flex-shrink-0 flex flex-col gap-6">
+        {
+          Array.from({ length: 5 }, () => (
+            <article class="flex items-center gap-4">
+              <img src="https://placehold.co/250x250" class="h-28 w-36 object-cover rounded-xl" />
+              <div class="flex flex-col shrink-0 gap-px">
+                <h4 class="text-lg font-semibold">Project Name</h4>
+                <p class="text-foreground/80 text-sm">Project Description</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
