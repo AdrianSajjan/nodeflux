@@ -1,5 +1,6 @@
 ---
 import { MaskedHeading } from "@/components/typography/masked-heading";
+import hero from "@/assets/images/about/hero.png";
 ---
 
 <section id="hero" class="group" data-state="invisible">
@@ -26,7 +27,7 @@ import { MaskedHeading } from "@/components/typography/masked-heading";
       </div>
     </div>
     <div class="group-data-[state=visible]:animate-slide-in opacity-0 [--slide-in-delay:150ms]">
-      <img src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65e06af667ae17a2b0df19d3_About%20Hero%20middle%20Icon-p-800.webp" class="h-full w-full rounded-3xl" />
+      <img src={hero.src} class="h-full w-full rounded-3xl" />
     </div>
   </div>
 </section>
