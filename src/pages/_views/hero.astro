@@ -1,6 +1,8 @@
 ---
 import { ArrowRightIcon } from "lucide-react";
 import { MaskedHeading } from "@/components/typography/masked-heading";
+
+import founder from '@/assets/images/home/founder.png'
 import google from "@/assets/images/home/google-icon.png";
 ---
 
@@ -47,7 +49,7 @@ import google from "@/assets/images/home/google-icon.png";
       </div>
     </div>
     <div class="animate-slide-in [--slide-in-delay:750ms] opacity-0 absolute inset-0 bottom-10 flex justify-center">
-      <img src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65e060e219830a12d4f4a19d_Hero%20Image.webp" alt="Me" class="h-full w-auto" />
+      <img src={founder.src} alt="Abhay" class="h-full w-auto" />
     </div>
   </div>
 </section>

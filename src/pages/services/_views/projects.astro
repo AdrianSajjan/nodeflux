@@ -1,9 +1,6 @@
 ---
 import { MaskedHeading } from "@/components/typography/masked-heading";
-import laptop from "@/assets/images/frames/laptop.png";
-import mobile from "@/assets/images/frames/mobile.png";
-import webOne from "@/assets/images/projects/web-1.png";
-import mobileOne from "@/assets/images/projects/mobile-1.png";
+import { DeliveredProjects } from '@/pages/services/_components/projects'
 ---
 
 <section id="projects" class="mt-40">
@@ -12,37 +9,6 @@ import mobileOne from "@/assets/images/projects/mobile-1.png";
       <MaskedHeading className="leading-[1.15]">Our Delivered Products</MaskedHeading>
       <p class="text-xl text-foreground/75 text-center">Here are some of the products we have created for our clients, for more examples please contact us</p>
     </div>
-    <div class="flex mt-20 gap-40">
-      <div class="flex flex-1 justify-center items-center">
-        <div class="relative w-full">
-          <div class="relative">
-            <img src={laptop.src} class="pointer-events-none" />
-            <div class="absolute top-[4.5%] left-[8%] right-[7.9%] bottom-[8.5%] overflow-y-scroll scrollbar-hidden">
-              <img src={webOne.src} class="h-auto w-full" />
-              <img src={webOne.src} class="h-auto w-full" />
-            </div>
-          </div>
-          <div class="absolute right-0 -bottom-12 w-3/12 h-auto">
-            <div class="absolute top-[1.5%] left-[4.5%] right-[4%] bottom-[1.5%] rounded-[5%] overflow-y-scroll scrollbar-hidden">
-              <img src={mobileOne.src} class="h-auto w-full" />
-            </div>
-            <img src={mobile.src} class="relative w-full h-auto z-10 pointer-events-none" />
-          </div>
-        </div>
-      </div>
-      <div class="flex-shrink-0 flex flex-col gap-6">
-        {
-          Array.from({ length: 1 }, () => (
-            <article class="flex items-center gap-4">
-              <img src={webOne.src} class="h-28 w-36 object-cover rounded-xl" />
-              <div class="flex flex-col shrink-0 gap-px max-w-48">
-                <h4 class="text-lg font-semibold">Web Dashboard</h4>
-                <p class="text-foreground/80 text-sm">Fully integrated CMS Platform</p>
-              </div>
-            </article>
-          ))
-        }
-      </div>
-    </div>
+    <DeliveredProjects client:load />
   </div>
 </section>
