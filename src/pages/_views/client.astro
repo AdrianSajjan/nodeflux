@@ -2,7 +2,7 @@
 import { MarqueeBrands } from "@/pages/_components/marquee-brands";
 ---
 
-<section id="client" class="pt-28 group" data-state="invisible">
+<section id="client" class="pt-16 sm:pt-28 group" data-state="invisible">
   <div class="container flex flex-col gap-10">
     <p class="group-data-[state=visible]:animate-slide-in opacity-0 text-center text-lg"><strong>Over 25 brands</strong> have experienced remarkable new user growth with NodeFlux</p>
     <div class="group-data-[state=visible]:animate-slide-in opacity-0 [--slide-in-delay:150ms]">
@@ -20,7 +20,7 @@ import { MarqueeBrands } from "@/pages/_components/marquee-brands";
         observer.unobserve(element);
       }
     },
-    { threshold: 0.5 }
+    { threshold: 0.25 }
   );
   observer.observe(element);
 </script>

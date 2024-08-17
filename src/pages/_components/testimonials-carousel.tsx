@@ -53,9 +53,8 @@ export function TestimonialsCarousel() {
 
 function CardCarousel() {
   return (
-    <div className="w-full relative">
-      <div className="absolute h-full w-36 bg-gradient-to-r from-background via-background/75 to-background/0 z-20 left-0 top-0" />
-      <Carousel className="w-full" opts={{ loop: true }}>
+    <div className="w-full relative sm:[mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
+      <Carousel className="w-full flex flex-col" opts={{ loop: true }}>
         <CarouselContent>
           {testimonials.map((testimonial) => (
             <CarouselItem key={testimonial.id} className="max-w-lg">
@@ -73,10 +72,11 @@ function CardCarousel() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <div className="flex mx-auto mt-14 gap-3">
+          <CarouselPrevious className="static" />
+          <CarouselNext className="static" />
+        </div>
       </Carousel>
-      <div className="absolute h-full w-36 bg-gradient-to-l from-background via-background/75 to-background/0 z-20 right-0 top-0" />
     </div>
   );
 }

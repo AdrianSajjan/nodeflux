@@ -4,7 +4,7 @@ import hero from "@/assets/images/about/hero.png";
 ---
 
 <section id="hero" class="group" data-state="invisible">
-  <div class="container grid grid-cols-2 gap-24">
+  <div class="container grid grid-cols-1 lg:grid-cols-2 gap-24">
     <div class="flex flex-col">
       <MaskedHeading className="text-left group-data-[state=visible]:animate-slide-in opacity-0">Learn about us</MaskedHeading>
       <p class="text-lg text-foreground/75 mt-8 leading-relaxed group-data-[state=visible]:animate-slide-in opacity-0 [--slide-in-delay:150ms]">
@@ -27,7 +27,7 @@ import hero from "@/assets/images/about/hero.png";
       </div>
     </div>
     <div class="group-data-[state=visible]:animate-slide-in opacity-0 [--slide-in-delay:150ms]">
-      <img src={hero.src} class="h-full w-full rounded-3xl" />
+      <img src={hero.src} class="h-full w-full rounded-3xl object-contain" />
     </div>
   </div>
 </section>
