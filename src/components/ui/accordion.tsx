@@ -13,9 +13,9 @@ AccordionItem.displayName = "AccordionItem";
 
 const AccordionTrigger = React.forwardRef<React.ElementRef<typeof AccordionPrimitive.Trigger>, React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>>(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Header className="flex">
-    <AccordionPrimitive.Trigger ref={ref} className={cn("flex flex-1 items-center justify-between font-medium transition-all text-lg [&[data-state=open]>div>svg]:rotate-180", className)} {...props}>
+    <AccordionPrimitive.Trigger ref={ref} className={cn("flex flex-1 items-center text-start gap-4 justify-between font-medium transition-all text-lg [&[data-state=open]>div>svg]:rotate-180", className)} {...props}>
       {children}
-      <div className="bg-foreground rounded-full h-6 w-6 grid place-items-center">
+      <div className="bg-foreground rounded-full h-6 w-6 grid place-items-center shrink-0">
         <ArrowDown strokeWidth={3} className="h-3.5 w-3.5 shrink-0 text-background transition-transform duration-200" />
       </div>
     </AccordionPrimitive.Trigger>

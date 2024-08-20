@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 const path = Astro.url.pathname;
 
-const navigation = [
+const desktop = [
   {
     label: "Home",
     href: "/nodeflux/",
@@ -17,17 +17,36 @@ const navigation = [
     href: "/nodeflux/services",
   },
 ];
+
+const mobile = [
+  {
+    label: "Home",
+    href: "/nodeflux/",
+  },
+  {
+    label: "About Us",
+    href: "/nodeflux/about",
+  },
+  {
+    label: "Our Services",
+    href: "/nodeflux/services",
+  },
+  {
+    label: "Contact Us",
+    href: "/nodeflux/contact",
+  },
+];
 ---
 
-<header class="h-20 flex items-end">
-  <div class="container flex items-center justify-between">
+<header class="h-24">
+  <div class="container flex items-center justify-between relative z-30 h-full bg-background">
     <a href="/nodeflux/" class="w-auto sm:w-64 shrink-0">
       <img src="/nodeflux/nodeflux.png" alt="nodeflux" class="h-16 w-auto" />
     </a>
     <!-- Desktop Navigation -->
     <nav class="text-base hidden lg:flex items-center gap-8 shrink-0">
       {
-        navigation.map((item) => (
+        desktop.map((item) => (
           <a href={item.href} class={cn("hover:text-foreground/75 transition-colors", path === item.href ? "text-foreground" : "text-foreground/50")}>
             {item.label}
           </a>
@@ -57,10 +76,45 @@ const navigation = [
       </a>
     </div>
     <!-- Mobile Navigation -->
-    <button class="flex lg:hidden items-center justify-center">
+    <button id="mobile-navigation-button" class="flex lg:hidden items-center justify-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
       </svg>
     </button>
   </div>
+  <div id="mobile-navigation-menu" class="w-full lg:hidden -translate-y-full pointer-events-none absolute transition-transform duration-500 ease-in-out overflow-hidden inset-0 top-20 z-20">
+    <nav  class="flex flex-col bg-background px-10 py-14 items-center gap-8">
+      {
+        mobile.map((item) => (
+          <a href={item.href} class={cn("hover:text-foreground/75 transition-colors text-center text-2xl font-medium", path === item.href ? "text-foreground" : "text-foreground/50")}>
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
 </header>
+
+<script>
+  const visible = ["translate-y-0", "pointer-events-auto"];
+  const hidden = ["-translate-y-full", "pointer-events-none"];
+  
+  const menu = document.getElementById("mobile-navigation-menu");
+  const button = document.getElementById("mobile-navigation-button");
+  
+  let open = false;
+  
+  function handleToggle() {
+    if(open) {
+      hidden.map((className)=> menu?.classList.remove(className));
+      visible.map((className)=> menu?.classList.add(className));
+    } else {
+      visible.map((className)=> menu?.classList.remove(className));
+      hidden.map((className)=> menu?.classList.add(className));
+    } 
+    open = !open;
+  };
+
+  button?.addEventListener("click", handleToggle);
+  handleToggle();
+</script>

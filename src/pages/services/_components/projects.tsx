@@ -33,7 +33,7 @@ export function DeliveredProjects() {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="flex mt-20 gap-40">
+    <div className="flex flex-col lg:flex-row mt-20 gap-40">
       <div className="flex flex-1 justify-center items-center">
         <div className="relative w-full">
           <div className="relative">

@@ -29,7 +29,7 @@ export function FAQAccordions() {
     <Accordion type="single" collapsible className="w-full flex flex-col gap-5">
       {faqs.map((faq) => (
         <AccordionItem value={faq.id} key={faq.id}>
-          <AccordionTrigger>{faq.title}</AccordionTrigger>
+          <AccordionTrigger className="gap-8">{faq.title}</AccordionTrigger>
           <AccordionContent>{faq.description}</AccordionContent>
         </AccordionItem>
       ))}
