@@ -20,7 +20,15 @@ const faqs = [
   {
     id: "work",
     title: "Can you provide examples of your previous work?",
-    description: "Absolutely! We have a portfolio of case studies and success stories that showcase our expertise and the impact of our solutions. You can view these on our website or request specific examples via the contact us form.",
+    description: (
+      <p>
+        Absolutely! We have a portfolio of case studies and success stories that showcase our expertise and the impact of our solutions. You can view these on&nbsp;
+        <a href="/nodeflux/services#projects" className="text-primary underline underline-offset-1">
+          our website
+        </a>
+        &nbsp;or request specific examples via the contact us form.
+      </p>
+    ),
   },
 ];
 

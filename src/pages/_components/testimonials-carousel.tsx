@@ -15,33 +15,37 @@ export interface Card {
 const testimonials: Card[] = [
   {
     id: "1",
-    content: "It has been an absolute pleasure working with Relume. The team went above and beyond to help us execute on our vision and always.",
-    name: "Matthew Johnson",
-    designation: "Fashion Designer",
+    content:
+      "NodeFlux absolutely nailed it with our new website. They took the time to understand our brand and target audience, and the result is a stunning, user-friendly platform that perfectly represents our company. Their attention to detail and commitment to excellence is unmatched.",
+    name: "Sarah Lim",
+    designation: "Marketing Executive",
     rating: 5,
     avatar: "https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65e0cf0a21c371f3e6155b35_Review%20Image.svg",
   },
   {
     id: "2",
-    content: "It has been an absolute pleasure working with Relume. The team went above and beyond to help us execute on our vision and always.",
-    name: "Matthew Johnson",
-    designation: "Fashion Designer",
+    content:
+      "NodeFlux's automation services have been a game-changer for our business. Their team was able to identify areas where we could improve efficiency and automate repetitive tasks, saving us both time and money. The results in the past 3 months have been fantastic",
+    name: "Michael Wong",
+    designation: "Operations Supervisor",
     rating: 5,
     avatar: "https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65e0cf09e935881c66703df2_review%20Image%202.svg",
   },
   {
     id: "3",
-    content: "It has been an absolute pleasure working with Relume. The team went above and beyond to help us execute on our vision and always.",
-    name: "Matthew Johnson",
-    designation: "Fashion Designer",
+    content:
+      "We wanted to redesign our mobile app so that it would enhance our customer experience, and NodeFlux was the perfect partner. Their team developed a beautiful and intuitive app that is easy to use and has been very well received.",
+    name: "Emily Lee",
+    designation: "Product Manager",
     rating: 5,
     avatar: "https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65e0cf0a6a271422de2dae24_Review%20Image%203.svg",
   },
   {
     id: "4",
-    content: "It has been an absolute pleasure working with Relume. The team went above and beyond to help us execute on our vision and always.",
-    name: "Matthew Johnson",
-    designation: "Fashion Designer",
+    content:
+      "NodeFlux truly understands the importance of customer-centricity. They worked closely with us to ensure that our website and applications met the needs of our customers and provided a seamless user experience. We're grateful for their partnership.",
+    name: "Rageshwaran",
+    designation: "Brand Manager",
     rating: 5,
     avatar: "https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65e0cf0a42a7088c022f38e2_Review%20Image%204.svg",
   },
@@ -58,7 +62,7 @@ function CardCarousel() {
         <CarouselContent>
           {testimonials.map((testimonial) => (
             <CarouselItem key={testimonial.id} className="max-w-lg">
-              <article className="bg-card py-10 px-12 flex flex-col gap-8 rounded-2xl border">
+              <article className="bg-card py-10 px-12 flex flex-col gap-8 rounded-2xl border h-full">
                 <Stars />
                 <p className="text-lg">{testimonial.content}</p>
                 <div className="flex gap-4 items-center">
