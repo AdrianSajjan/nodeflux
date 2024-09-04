@@ -14,17 +14,33 @@ type FormState = z.infer<typeof schema>;
 
 const schema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
-  phone: z.string().regex(/^\+?[1-9]\d{1,14}$/, { message: "Please provide a valid phone number" }),
-  email: z.string().email({ message: "Please provide a valid email address" }),
+  phone: z.string().optional(),
+  email: z.string().optional(),
   mode: z.enum(["email", "phone", "whatsapp"], { message: "Please provide your preferred mode of contact" }),
   subject: z.string().min(1, { message: "Subject is required" }),
   message: z.string().min(1, { message: "Message is required" }),
-  agreement: z.boolean(),
+  agreement: z.boolean().refine(val => val === true, {
+    message: "You must agree to be contacted",
+  }),
+}).superRefine((data, ctx) => {
+  if (!data.email && !data.phone) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: "Either email or phone must be provided",
+      path: ["email"],
+    });
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: "Either email or phone must be provided",
+      path: ["phone"],
+    });
+  }
 });
+
 
 export function ContactForm() {
   const form = useForm<FormState>({
-    defaultValues: { name: "", phone: "", email: "", subject: "", message: "", agreement: false },
+    defaultValues: { name: "", phone: "", email: "", subject: "", message: "", agreement: true },
     resolver: zodResolver(schema),
   });
 
@@ -148,12 +164,31 @@ export function ContactForm() {
             />
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-8 justify-between col-span-2">
-            <div className="flex items-center gap-3">
-              <Controller name="agreement" control={form.control} render={({ field }) => <Checkbox id="checkbox" checked={field.value} onCheckedChange={field.onChange} />} />
-              <Label htmlFor="checkbox" className="leading-snug">
-                I agree to be contacted by Nodeflux in regards to this inquiry
-              </Label>
-            </div>
+          <div className="flex flex-col items-start col-span-2">
+            <FormField
+              control={form.control}
+              name="agreement"
+              render={({ field }) => (
+                <FormItem className="w-full">
+                  <div className="flex items-center gap-3">
+                    <Controller
+                      name="agreement"
+                      control={form.control}
+                      render={({ field }) => (
+                        <Checkbox id="checkbox" checked={field.value} onCheckedChange={field.onChange} />
+                      )}
+                    />
+                    <Label htmlFor="checkbox" className="leading-snug">
+                      I agree to be contacted by Nodeflux in regards to this inquiry
+                    </Label>
+                  </div>
+                  {form.formState.errors.agreement && (
+                    <FormMessage>{form.formState.errors.agreement.message}</FormMessage>
+                  )}
+                </FormItem>
+              )}
+            />
+          </div>
             <div className="relative group/button w-full sm:w-fit shrink-0">
               <div className="absolute transition-all duration-150 opacity-0 inset-px bg-[#FFFFFF] rounded-xl blur-sm group-hover/button:opacity-40 group-hover/button:-inset-px group-hover/button:duration-300 z-0"></div>
               <button className="h-14 sm:w-auto w-full inline-flex items-center justify-center text-center px-10 py-2 bg-[#FFFFFF] font-medium rounded-full text-background relative z-10">Submit Now</button>
