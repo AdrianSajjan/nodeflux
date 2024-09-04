@@ -3,6 +3,12 @@ import { motion } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Stars } from "./stars";
 
+
+import jiaxin from '@/assets/images/review/JiaXin.png'
+import michael from '@/assets/images/review/Michael.png'
+import ragesh from '@/assets/images/review/Rageshwaran.png'
+import sarah from '@/assets/images/review/Sarah.png'
+
 export interface Card {
   id: string;
   name: string;
@@ -19,8 +25,8 @@ const testimonials: Card[] = [
       "NodeFlux absolutely nailed it with our new website. They took the time to understand our brand and target audience, and the result is a stunning, user-friendly platform that perfectly represents our company. Their attention to detail and commitment to excellence is unmatched.",
     name: "Sarah Lim",
     designation: "Marketing Executive",
-    rating: 5,
-    avatar: "https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65e0cf0a21c371f3e6155b35_Review%20Image.svg",
+    rating: 3,
+    avatar: sarah.src,
   },
   {
     id: "2",
@@ -29,16 +35,16 @@ const testimonials: Card[] = [
     name: "Michael Wong",
     designation: "Operations Supervisor",
     rating: 5,
-    avatar: "https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65e0cf09e935881c66703df2_review%20Image%202.svg",
+    avatar: michael.src,
   },
   {
     id: "3",
     content:
       "We wanted to redesign our mobile app so that it would enhance our customer experience, and NodeFlux was the perfect partner. Their team developed a beautiful and intuitive app that is easy to use and has been very well received.",
-    name: "Emily Lee",
+    name: "Jia Xin Lin",
     designation: "Product Manager",
     rating: 5,
-    avatar: "https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65e0cf0a6a271422de2dae24_Review%20Image%203.svg",
+    avatar: jiaxin.src,
   },
   {
     id: "4",
@@ -47,7 +53,7 @@ const testimonials: Card[] = [
     name: "Rageshwaran",
     designation: "Brand Manager",
     rating: 5,
-    avatar: "https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65e0cf0a42a7088c022f38e2_Review%20Image%204.svg",
+    avatar: ragesh.src,
   },
 ];
 
