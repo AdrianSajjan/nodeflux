@@ -22,7 +22,7 @@ const testimonials: Card[] = [
   {
     id: "1",
     content:
-      "NodeFlux absolutely nailed it with our new website. They took the time to understand our brand and target audience, and the result is a stunning, user-friendly platform that perfectly represents our company. Their attention to detail and commitment to excellence is unmatched.",
+      "NodeFlux absolutely nailed it with our new website. They took the time to understand our brand and target audience, and the result is a stunning, user-friendly platform that perfectly represents our company. Their focus on the little things and the dedication to provide us the absolute best product made the entire experience seamless and exceeded our expectations.",
     name: "Sarah Lim",
     designation: "Marketing Executive",
     rating: 3,
@@ -31,7 +31,7 @@ const testimonials: Card[] = [
   {
     id: "2",
     content:
-      "NodeFlux's automation services have been a game-changer for our business. Their team was able to identify areas where we could improve efficiency and automate repetitive tasks, saving us both time and money. The results in the past 3 months have been fantastic",
+      "NodeFlux’s automation services have completely transformed our business. Their team quickly spotted areas where we could boost efficiency and automate all the tedious tasks that were slowing us down. In just three months, we’ve seen incredible results — saving both time and money. Honestly, we couldn’t be happier!",
     name: "Michael Wong",
     designation: "Operations Supervisor",
     rating: 5,
@@ -49,7 +49,7 @@ const testimonials: Card[] = [
   {
     id: "4",
     content:
-      "NodeFlux truly understands the importance of customer-centricity. They worked closely with us to ensure that our website and applications met the needs of our customers and provided a seamless user experience. We're grateful for their partnership.",
+      "Nodeflux was amazing at working side by side with us to make sure our website and apps were exactly what our customers needed, with a smooth, hassle-free user experience. We’re super thankful for their partnership and couldn’t be more pleased with the results!",
     name: "Rageshwaran",
     designation: "Brand Manager",
     rating: 5,
