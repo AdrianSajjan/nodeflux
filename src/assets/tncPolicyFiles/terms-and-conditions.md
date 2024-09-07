@@ -1,8 +1,8 @@
 **Terms and Conditions of Use for Nodeflux Pte. Ltd**
 
-**Effective Date: [Insert Date]**
+**Effective Date: 08/09/2024**
 
-Welcome to the website of **Nodeflux Pte. Ltd** (“we,” “our,” or “the Company”). These Terms and Conditions (“Terms,” “Agreement”) govern your use of our website located at [Insert Website URL], including all subdomains, related services, and other associated digital platforms operated by Nodeflux Pte. Ltd (collectively referred to as “the Site”).
+Welcome to the website of **Nodeflux Pte. Ltd** (“we,” “our,” or “the Company”). These Terms and Conditions (“Terms,” “Agreement”) govern your use of our website located at nodeflux.org, including all subdomains, related services, and other associated digital platforms operated by Nodeflux Pte. Ltd (collectively referred to as “the Site”).
 
 By accessing, browsing, or using our Site, you agree to be bound by these Terms and Conditions. If you do not agree to these Terms, please discontinue your use of the Site immediately.
 
