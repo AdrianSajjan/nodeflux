@@ -55,10 +55,13 @@ export function ContactForm() {
       body.append(key, String(data[key as keyof FormState]));
     }
     try {
-      const response = await fetch("https://script.google.com/macros/s/1-IAIe3ZQVbH_Tu74bYW620vLSwo-jOrf-w2atzDX4Lk/exec", {
-        method: "POST",
-        body: body,
-      });
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbzd9fCi-Cdpg5jSDVJOX0hNobQWsDyWaQt58ZvYaYKtTQBZqRriKHJnPHH0-YNzZYYi/exec",
+        {
+          method: "POST",
+          body: body,
+        },
+      );
       if (!response.ok) {
         setStatus("error");
       } else {
@@ -86,7 +89,7 @@ export function ContactForm() {
                         src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65cd218882b66ce77f0675fc_Person%20Icon.svg"
                         className="absolute left-4"
                       />
-                      <Input placeholder="Full Name" className="pl-12" defaultValue="" {...field} />
+                      <Input placeholder="Full Name" className="pl-12" {...field} />
                     </div>
                   </FormControl>
                   {form.formState.errors.name ? <FormMessage /> : <FormDescription>Enter your full name</FormDescription>}
@@ -106,7 +109,7 @@ export function ContactForm() {
                         src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65cd218882b66ce77f0675fc_Person%20Icon.svg"
                         className="absolute left-4"
                       />
-                      <Input placeholder="Phone Number" className="pl-12" defaultValue="" {...field} />
+                      <Input placeholder="Phone Number" className="pl-12" {...field} />
                     </div>
                   </FormControl>
                   {form.formState.errors.phone ? <FormMessage /> : <FormDescription>Provide a valid phone number</FormDescription>}
@@ -126,7 +129,7 @@ export function ContactForm() {
                         src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65cd2186a8f8aab935af73b1_Envelope.svg"
                         className="absolute left-4"
                       />
-                      <Input placeholder="Email Address" className="pl-12" defaultValue="" {...field} />
+                      <Input placeholder="Email Address" className="pl-12" {...field} />
                     </div>
                   </FormControl>
                   {form.formState.errors.email ? <FormMessage /> : <FormDescription>Provide a valid email address</FormDescription>}
@@ -175,7 +178,7 @@ export function ContactForm() {
                         src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65cd2187c420420784330df6_Subject%20Icon.png"
                         className="absolute left-4"
                       />
-                      <Input placeholder="Subject" className="pl-12" defaultValue="" {...field} />
+                      <Input placeholder="Subject" className="pl-12" {...field} />
                     </div>
                   </FormControl>
                   {form.formState.errors.subject ? <FormMessage /> : <FormDescription>Enter your subject</FormDescription>}
@@ -195,7 +198,7 @@ export function ContactForm() {
                         src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65cd2187028ea46ec50bf656_Message%20Icon.svg"
                         className="absolute left-4 top-2.5"
                       />
-                      <Textarea placeholder="Message" className="pl-12" defaultValue="" {...field} />
+                      <Textarea placeholder="Message" className="pl-12" {...field} />
                     </div>
                   </FormControl>
                   {form.formState.errors.message ? <FormMessage /> : <FormDescription>Type your message</FormDescription>}
