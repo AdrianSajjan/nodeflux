@@ -2,19 +2,27 @@
 import { MaskedHeading } from "@/components/typography/masked-heading";
 import { ContactForm } from "@/pages/contact/_components/form";
 import group from "@/assets/images/contactusGroup.png";
-
 ---
 
 <section id="contact group" data-state="invisible">
   <div class="container flex flex-col items-center">
-    <MaskedHeading className="animate-slide-in opacity-0 text-5xl md:text-6xl lg:text-7xl max-w-2xl leading-[1.1]">Let's start a project together</MaskedHeading>
-    <div class="animate-slide-in [--slide-in-delay:150ms] opacity-0 grid grid-cols-12 w-full max-w-screen-xl border border-[#1D1D1D] bg-card rounded-2xl overflow-hidden mt-[4.5rem]">
+    <MaskedHeading className="animate-slide-in opacity-0 text-5xl md:text-6xl lg:text-7xl max-w-2xl leading-[1.1]"
+      >Let's start a project together</MaskedHeading
+    >
+    <div
+      class="animate-slide-in [--slide-in-delay:150ms] opacity-0 grid grid-cols-12 w-full max-w-screen-xl border border-[#1D1D1D] bg-card rounded-2xl overflow-hidden mt-[4.5rem]"
+    >
       <div class="col-span-12 lg:col-span-4 flex flex-col gap-8 items-center bg-[#1D1D1D] px-12 py-16">
         <img src={group.src} alt="" style="height: 50px;" />
         <p class="text-2xl font-medium text-white text-center">Let's start a project<br />together</p>
         <div class="relative group/button w-fit">
-          <div class="absolute transition-all duration-150 opacity-0 inset-px bg-[#B73DFC] rounded-xl blur-lg group-hover/button:opacity-60 group-hover/button:-inset-px group-hover/button:duration-300 z-0"></div>
-          <button class="h-12 inline-flex items-center px-10 py-2 bg-[#B73DFC] font-medium rounded-full text-background relative z-10">Contact Us</button>
+          <div
+            class="absolute transition-all duration-150 opacity-0 inset-px bg-[#B73DFC] rounded-xl blur-lg group-hover/button:opacity-60 group-hover/button:-inset-px group-hover/button:duration-300 z-0"
+          >
+          </div>
+          <button class="h-12 inline-flex items-center px-10 py-2 bg-[#B73DFC] font-medium rounded-full text-background relative z-10"
+            >Contact Us</button
+          >
         </div>
         <div class="flex flex-col gap-4 pt-4">
           <div class="flex items-center gap-3">
@@ -31,9 +39,9 @@ import group from "@/assets/images/contactusGroup.png";
           </div>
         </div>
       </div>
-      <div class="col-span-12 lg:col-span-8 row-start-1 lg:row-start-auto flex flex-col p-10 md:p-12">
+      <div class="col-span-12 lg:col-span-8 row-start-1 lg:row-start-auto flex flex-col p-10 md:p-12 relative">
         <h4 class="text-2xl font-medium">Get in touch</h4>
-       <ContactForm client:load />
+        <ContactForm client:load />
       </div>
     </div>
   </div>
@@ -48,7 +56,7 @@ import group from "@/assets/images/contactusGroup.png";
         observer.unobserve(element);
       }
     },
-    { threshold: 0.25 }
+    { threshold: 0.25 },
   );
   observer.observe(element);
 </script>

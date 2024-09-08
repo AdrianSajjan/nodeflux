@@ -91,6 +91,14 @@ module.exports = {
             transform: "translateY(0)",
           },
         },
+        "fade-in": {
+          from: {
+            opacity: "0",
+          },
+          to: {
+            opacity: "1",
+          },
+        },
         scroll: {
           to: {
             transform: "translate(calc(-50% - 0.5rem))",
@@ -101,6 +109,7 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "slide-in": "slide-in var(--slide-in-duration, 500ms) ease var(--slide-in-delay, 0ms) var(--slide-in-direction, forwards)",
+        "fade-in": "fade-in var(--fade-in-duration, 500ms) ease var(--fade-in-delay, 0ms) var(--fade-in-direction, forwards)",
         scroll: "scroll var(--scroll-duration, 40s) var(--scroll-direction, forwards) linear infinite",
       },
     },

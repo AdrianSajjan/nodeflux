@@ -44,6 +44,9 @@ importers:
       astro:
         specifier: ^4.15.2
         version: 4.15.3(rollup@4.21.2)(typescript@5.5.3)
+      astro-integration-lottie:
+        specifier: ^0.3.0
+        version: 0.3.0(lottie-web@5.12.2)
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -56,6 +59,9 @@ importers:
       framer-motion:
         specifier: ^11.3.7
         version: 11.3.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      lottie-web:
+        specifier: ^5.12.2
+        version: 5.12.2
       lucide-react:
         specifier: ^0.408.0
         version: 0.408.0(react@18.3.1)
@@ -1201,6 +1207,11 @@ packages:
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
 
+  astro-integration-lottie@0.3.0:
+    resolution: {integrity: sha512-qSsdvwBVMSKEb/KshVYLNgkjX6i/lJul8whSXw4O4DPq7Et39Tb94CqtAgphwd/QOLbnL4Sknq4Z2y6kosgg9w==}
+    peerDependencies:
+      lottie-web: ^5.10.0
+
   astro@4.15.3:
     resolution: {integrity: sha512-zwO8H+vnNYbrdKz0Pkh2a4B/JK06JUvI18w+FxL3B5u4jqPB/SU+LH9XVUUWdNQsyJ/DBHKAf0LDK0RmwxXQEw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
@@ -1794,6 +1805,9 @@ packages:
   loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
+
+  lottie-web@5.12.2:
+    resolution: {integrity: sha512-uvhvYPC8kGPjXT3MyKMrL3JitEAmDMp30lVkuq/590Mw9ok6pWcFCwXJveo0t5uqYw1UREQHofD+jVpdjBv8wg==}
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
@@ -3904,6 +3918,10 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
+  astro-integration-lottie@0.3.0(lottie-web@5.12.2):
+    dependencies:
+      lottie-web: 5.12.2
+
   astro@4.15.3(rollup@4.21.2)(typescript@5.5.3):
     dependencies:
       '@astrojs/compiler': 2.10.3
@@ -4555,6 +4573,8 @@ snapshots:
   loose-envify@1.4.0:
     dependencies:
       js-tokens: 4.0.0
+
+  lottie-web@5.12.2: {}
 
   lru-cache@10.4.3: {}
 
