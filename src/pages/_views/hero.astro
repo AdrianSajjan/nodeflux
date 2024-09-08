@@ -2,22 +2,30 @@
 import { ArrowRightIcon } from "lucide-react";
 import { MaskedHeading } from "@/components/typography/masked-heading";
 
-import founder from '@/assets/images/home/founder.png'
+import founder from "@/assets/images/home/founder.png";
 import google from "@/assets/images/home/google-icon.png";
-import shiv from "@/assets/images/review/ShivKamdar.png"
+import shiv from "@/assets/images/review/ShivKamdar.png";
 ---
 
 <section id="hero" class="flex flex-col gap-16">
   <div class="container">
     <div class="flex flex-col items-center">
-      <MaskedHeading className="animate-slide-in opacity-0 max-w-4xl text-5xl sm:text-7xl lg:text-[5.5rem] leading-[1.1]">Elevating businesses to the next level.</MaskedHeading>
+      <MaskedHeading className="animate-slide-in opacity-0 max-w-4xl text-5xl sm:text-7xl lg:text-[5.5rem] leading-[1.1]"
+        >Elevating businesses to the next level.</MaskedHeading
+      >
       <p class="animate-slide-in [--slide-in-delay:150ms] opacity-0 text-foreground/80 max-w-xl text-center text-lg font-normal mt-6 mb-10">
         Bringing win-win strategies to the table for proactive domination and a new normal in digital excellence.
       </p>
       <div class="flex flex-col sm:flex-row items-center gap-8 animate-slide-in [--slide-in-delay:250ms] opacity-0">
         <div class="relative group/button">
-          <div class="absolute transition-all duration-150 opacity-0 inset-px bg-[#c257ff] rounded-xl blur-lg group-hover/button:opacity-60 group-hover/button:-inset-px group-hover/button:duration-300 z-0"></div>
-          <a class="h-14 inline-flex items-center px-10 py-2 bg-[#c257ff] font-semibold rounded-full text-background relative z-10" href="/contact">Get in touch</a>
+          <div
+            class="absolute transition-all duration-150 opacity-0 inset-px bg-[#c257ff] rounded-xl blur-lg group-hover/button:opacity-60 group-hover/button:-inset-px group-hover/button:duration-300 z-0"
+          >
+          </div>
+          <a
+            class="h-14 inline-flex items-center px-10 py-2 bg-[#c257ff] font-semibold rounded-full text-background relative z-10"
+            href="/contact">Get in touch</a
+          >
         </div>
         <a class="inline-flex items-center gap-2 group" href="/services">
           <span class="font-medium">View our services</span>
@@ -32,13 +40,18 @@ import shiv from "@/assets/images/review/ShivKamdar.png"
     </div>
   </div>
   <div class="relative overflow-hidden container max-w-screen-2xl">
-    <div class="animate-slide-in [--slide-in-delay:350ms] opacity-0 shadow-[inset_0_0_2px_15px_#141414] sm:shadow-[inset_0_0_2px_40px_#141414] bg-hero-pattern min-h-60 sm:min-h-[37.5rem] w-full rounded-full bg-center bg-no-repeat bg-auto mt-16 flex items-center px-28 justify-between">
-      <div class="hidden sm:flex flex-col items-center gap-4">
-        <img src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65b92bd534c9e4af4d859923_star%20rate%20icon.svg" alt="Stars" />
+    <div
+      class="animate-slide-in [--slide-in-delay:350ms] opacity-0 shadow-[inset_0_0_2px_15px_#141414] sm:shadow-[inset_0_0_2px_40px_#141414] bg-hero-pattern min-h-60 sm:min-h-96 lg:min-h-[28rem] xl:min-h-[36rem] w-full rounded-full bg-center bg-no-repeat bg-auto mt-16 flex items-center px-28 justify-between"
+    >
+      <div class="hidden md:flex flex-col items-center gap-4">
+        <img
+          src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65b92bd534c9e4af4d859923_star%20rate%20icon.svg"
+          alt="Stars"
+        />
         <p class="italic">4.6 out of 5 based on 18 reviews</p>
         <img src={google.src} alt="Google" class="h-12 w-auto" />
       </div>
-      <div class="hidden sm:flex flex-col gap-4 max-w-80">
+      <div class="hidden md:flex flex-col gap-4 max-w-80">
         <p class="italic">“They turned our digital vision into reality with an impressive website that just WOWs our customers”</p>
         <div class="flex items-center gap-4">
           <img src={shiv.src} alt="client" />
