@@ -1,0 +1,127 @@
+---
+import Layout from "@/layouts/layout.astro";
+import { MaskedHeading } from "@/components/typography/masked-heading";
+
+---
+
+<Layout title="Referral">
+  <div class="container mx-auto">
+    <div class="flex flex-col items-center mb-10">
+      <MaskedHeading
+        id="referral-name"
+        className="animate-slide-in opacity-0 max-w-4xl text-5xl sm:text-7xl lg:text-[5.5rem] leading-[1.1]"
+      >
+        Hey,
+      </MaskedHeading>
+    </div>
+    
+    <div class="flex flex-col max-w-4xl items-center">
+      <p class="text-xl">
+        I wanted to share some exciting news with you—I've recently started my own company <b>NodeFlux Pte Ltd</b>! It's been an incredible journey so far, and I'm really excited about the opportunities ahead.</p>
+
+        <p class="text-xl mt-5">
+        I'm currently looking to connect with potential clients who might need any of the following services (and more):
+      </p>
+    </div>
+    <div>
+      <ul class="list-disc pl-6 mt-2 text-md mb-5">
+        <li>Website development</li>
+        <li>Application development (both mobile and web)</li>
+        <li>Graphic design</li>
+        <li>AI workflow automation</li>
+        <li>Social media presence</li>
+      </ul>
+
+      <p>
+        If you know anyone who might benefit from these services, I would be incredibly grateful if you could pass along my contact information.
+
+        In return, I've set up a referral system for some close friends. Here's how it works:
+      </p>
+
+      <!-- Referral Tiers Table -->
+      <table class="table-auto border-collapse border border-gray-400 mt-4">
+        <thead>
+          <tr>
+            <th class="border border-gray-300 px-4 py-2">If the client spends ($)</th>
+            <th class="border border-gray-300 px-4 py-2">Your Referral Fee($)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">$1000 to $2999</td>
+            <td class="border border-gray-300 px-4 py-2">$100</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">$3000 to $4999</td>
+            <td class="border border-gray-300 px-4 py-2">$300</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">$5000 to $7499</td>
+            <td class="border border-gray-300 px-4 py-2">$500</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">$7500 to $9999</td>
+            <td class="border border-gray-300 px-4 py-2">$750</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">$10000 onwards</td>
+            <td class="border border-gray-300 px-4 py-2">$1000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      
+      <p class="mt-3">
+        Also, I would really appreciate it if you could follow NodeFlux's Socials as well. As a valued friend, your support means a lot to me.
+      </p>
+      <div class="flex item-center gap-4">
+        <a href="https://www.linkedin.com/company/nodefluxsg" class="h-11 w-11 rounded-full border grid place-items-center">
+          <img src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65e08a7ccb4f3f1f41f327f3_linedin%20icon.svg" />
+        </a>
+        <a
+          href="https://www.facebook.com/people/NodeFlux-Pte-Ltd/61565335343560/"
+          class="h-11 w-11 rounded-full border grid place-items-center"
+        >
+          <img src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65e08a7ccb4f3f1f41f327f1_facebook%20icon.svg" />
+        </a>
+        <a href="https://www.instagram.com/nodefluxsg/" class="h-11 w-11 rounded-full border grid place-items-center">
+          <img src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65e08a7ccb4f3f1f41f327f2_instagram%20icon.svg" />
+        </a>
+        <a href="https://x.com/nodefluxsg?lang=en" class="h-11 w-11 rounded-full border grid place-items-center">
+          <img src="https://cdn.prod.website-files.com/65b815fb8b11393078dd199d/65e08a7ccb4f3f1f41f327f4_twitter%20icon.svg" />
+        </a>
+      </div>
+
+      <!-- Terms and Conditions -->
+      <div class="mt-8" style="color: #7d7d7d;">
+        <h2 class="text-xl font-semibold ">Terms and Conditions</h2>
+        <p class="text-sm">
+          The referral program is subject to the following terms:
+        </p>
+        <ul class="list-disc pl-6 mt-2 text-sm">
+          <li>This offer is valid for 1 year from 16-Sep-2024 to 15-Sep-2025.</li>
+          <li>Referral rewards are applicable only after successful referral and completion of client's project.</li>
+          <li>Rewards will be given within 30 days of final payment confirmation from referred clients.</li>
+          <li>NodeFlux Pte. Ltd. reserves the right to amend or terminate this offer at any time without prior notice.</li>
+          <li>In case of any dispute, the NodeFlux Pte. Ltd.'s decision will be final and binding.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Client-side Script -->
+  <script>
+    // Wait until the page is fully loaded
+    window.addEventListener('DOMContentLoaded', (event) => {
+      // Get the URL query parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const fullName = urlParams.get('name')?.replace(/\+/g, " ") || "Valued Friend";
+      
+      // Update the referral name dynamically
+      const nameElement = document.getElementById('referral-name');
+      if (nameElement) {
+        nameElement.textContent = `Hey ${fullName},`;
+      }
+    });
+  </script>
+</Layout>
