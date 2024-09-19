@@ -3,11 +3,10 @@ import { motion } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Stars } from "./stars";
 
-
-import jiaxin from '@/assets/images/review/JiaXin.png'
-import michael from '@/assets/images/review/Michael.png'
-import ragesh from '@/assets/images/review/Rageshwaran.png'
-import sarah from '@/assets/images/review/Sarah.png'
+import jiaxin from "@/assets/images/review/JiaXin.png";
+import michael from "@/assets/images/review/Michael.png";
+import ragesh from "@/assets/images/review/Rageshwaran.png";
+import sarah from "@/assets/images/review/Sarah.png";
 
 export interface Card {
   id: string;
@@ -96,7 +95,7 @@ const scaleFactor = 0.06;
 
 function CardStack() {
   const [cards, setCards] = useState<Card[]>(testimonials);
-  const interval = useRef<number>();
+  const interval = useRef<NodeJS.Timer>();
 
   const startFlipping = useCallback(() => {
     interval.current = setInterval(() => {
